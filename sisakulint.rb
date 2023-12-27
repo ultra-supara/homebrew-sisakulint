@@ -5,20 +5,20 @@
 class Sisakulint < Formula
   desc "Support tools for GitHub Actions workflow files"
   homepage "https://github.com/ultra-supara/sisakulint"
-  version "0.0.16"
+  version "0.0.17"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/ultra-supara/homebrew-sisakulint/releases/download/v0.0.16/sisakulint_0.0.16_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "cd2cad7eeed42215ad49f52adb30b84ee699007cae0d4f54958da6c6274ebe69"
+      url "https://github.com/ultra-supara/homebrew-sisakulint/releases/download/v0.0.17/sisakulint_0.0.17_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "1ec2e6a6038d78ce483d4d50227ab852f6c26b4aabd46b7fb5606477581cd398"
 
       def install
         bin.install "sisakulint"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ultra-supara/homebrew-sisakulint/releases/download/v0.0.16/sisakulint_0.0.16_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "f94606b8e83ee3c91f01115cc9bd671b87341973b97d71898f83053ed9c49d83"
+      url "https://github.com/ultra-supara/homebrew-sisakulint/releases/download/v0.0.17/sisakulint_0.0.17_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "f8474aa8350217f653da731f77ad7fac4d7526188e27d80f1571ff64720305bf"
 
       def install
         bin.install "sisakulint"
@@ -28,24 +28,24 @@ class Sisakulint < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ultra-supara/homebrew-sisakulint/releases/download/v0.0.16/sisakulint_0.0.16_linux_armv6.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "d78800493832c9b245658385addd2d33d17e31381ed0a10e500ac08ee2d9c1f1"
+      url "https://github.com/ultra-supara/homebrew-sisakulint/releases/download/v0.0.17/sisakulint_0.0.17_linux_armv6.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "31db400160727f34a7a434523f5adcaffe17450a53f098f400311e57d5332e7c"
 
       def install
         bin.install "sisakulint"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ultra-supara/homebrew-sisakulint/releases/download/v0.0.16/sisakulint_0.0.16_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "6b55b43200c020cc2dde836d35d10e20510634e146b02f400a551f40cbfc83e3"
+      url "https://github.com/ultra-supara/homebrew-sisakulint/releases/download/v0.0.17/sisakulint_0.0.17_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "b0c922a558f6bf5e0f72a0ad34e573fa13a76e4c36b9407e2c921fba199c9c10"
 
       def install
         bin.install "sisakulint"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ultra-supara/homebrew-sisakulint/releases/download/v0.0.16/sisakulint_0.0.16_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "14ebabc5e70c8482818ef8a4d687d29427c55b6d080d7e1a04ab5595e746fa69"
+      url "https://github.com/ultra-supara/homebrew-sisakulint/releases/download/v0.0.17/sisakulint_0.0.17_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "d770d99b36f4b4dde6ad4e2da2eaf066f169934d3e63245a739a68774cbbccd3"
 
       def install
         bin.install "sisakulint"

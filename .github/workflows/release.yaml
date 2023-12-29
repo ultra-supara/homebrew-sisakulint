@@ -1,0 +1,21 @@
+# costom boilerplate file from sisakulint
+	# https://docs.github.com/ja/actions/using-workflows/creating-starter-workflows-for-your-organization
+	# https://docs.github.com/en/actions/publishing-packages/publishing-docker-images#publishing-images-to-github-packages
+	# https://github.com/docker/metadata-action#semver
+name: Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+    tags:
+      - 'v*'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Sisakulint Release
+        run: |
+          gh release download ${{ github.ref_name }} --repo ultra-supara/sisakulint --pattern 'sisakulint_*_*_*.tar.gz'

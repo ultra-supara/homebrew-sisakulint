@@ -13,8 +13,15 @@ jobs:
     steps:
       - name: Download Sisakulint Release
         run: |
-          gh release download ${{ github.ref_name }} --repo ultra-supara/sisakulint --pattern 'sisakulint_*_*_*.tar.gz'
+          gh release download ${{ github.ref_name }} --repo ultra-supara/sisakulint --pattern 'sisakulint_*_*_*.tar.gz' --pattern 'sisakulint_*_checksums.txt'
           ls -laR
         env:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
-      
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            sisakulint_*_*_*.tar.gz
+            sisakulint_*_checksums.txt
+          fail_on_unmatched_files: true
+        

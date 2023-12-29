@@ -15,5 +15,5 @@ jobs:
         run: |
           gh release download ${{ github.ref_name }} --repo ultra-supara/sisakulint --pattern 'sisakulint_*_*_*.tar.gz'
         env:
-          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
       

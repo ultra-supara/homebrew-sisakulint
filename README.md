@@ -1,14 +1,23 @@
 # sisakulint
 sisakulint is a private repository tool, but it can be installed from brew.
 
-## install your machine directly
+## install your machine directly for macOS user
 
 ```
 $ brew tap ultra-supara/homebrew-sisakulint
 $ brew install sisakulint
 ```
 
+## install from release page for Linux user
+
+```
+# visit release page of this repository and download for yours.
+$ cd < sisakulintがあるところ >
+$ mv ./sisakulint /usr/local/bin/sisakulint
+```
+
 ## Run sisakulint on linux brew using docker
+I am so sorry, this method is currently unavailable.
 Run the following commands:
 ```
 # Usage

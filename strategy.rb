@@ -45,10 +45,10 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
 
 
   def set_github_token
-    @github_token = ENV["HOMEBREW_GITHUB_API_TOKEN"]
-    unless @github_token
-      raise CurlDownloadStrategyError, "Environmental variable HOMEBREW_GITHUB_API_TOKEN is required."
-    end
+    #@github_token = ENV["HOMEBREW_GITHUB_API_TOKEN"]
+    #unless @github_token
+    #  raise CurlDownloadStrategyError, "Environmental variable HOMEBREW_GITHUB_API_TOKEN is required."
+    #end
 
 
     validate_github_repository_access!
@@ -122,6 +122,6 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
 
   def fetch_release_metadata
     release_url = "https://api.github.com/repos/#{@owner}/#{@repo}/releases/tags/#{@tag}"
-    GitHub.open_api(release_url)
+    GitHub.open_rest(release_url)
   end
 end

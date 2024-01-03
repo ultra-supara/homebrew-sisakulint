@@ -1,5 +1,7 @@
 # sisakulint
 sisakulint is a private repository tool, but it can be installed from brew.
+![logo](https://github.com/ultra-supara/homebrew-sisakulint/assets/67861004/e9801cbb-fbe1-4822-a5cd-d1daac33e90f)
+
 
 ## install your machine directly for macOS user
 
@@ -158,8 +160,8 @@ this part `"data.core.missing_action_ref_sha_warnings"` changes depending on the
 
 ## Links
 
-- [user document](https://www.notion.so/ultra-supara/sisakulint-user-document-d3f28d427cf9456dbe3c0f063a7d3baf?pvs=4)
-- [developer document](https://www.notion.so/ultra-supara/sisakulint-c18505b443254ee5a3e5e3751b810a33?pvs=4)
+- [developer document](https://www.notion.so/ultra-supara/sisakulint-user-document-d3f28d427cf9456dbe3c0f063a7d3baf?pvs=4)
+- [user document](https://www.notion.so/ultra-supara/sisakulint-c18505b443254ee5a3e5e3751b810a33?pvs=4)
 
 - slides
 - poster

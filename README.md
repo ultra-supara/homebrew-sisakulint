@@ -2,6 +2,14 @@
 sisakulint is a private repository tool, but it can be installed from brew.
 ![logo](https://github.com/ultra-supara/homebrew-sisakulint/assets/67861004/e9801cbb-fbe1-4822-a5cd-d1daac33e90f)
 
+## JSON schema for normal system confirmation for GitHub Actions syntax
+paste yours `settings.json`
+```
+ "yaml.schemas": {
+     "https://ultra-supara/homebrew-sisakulint/settings.json": "/.github/workflows/*.{yml,yaml}"
+ }
+```
+
 
 ## install your machine directly for macOS user
 

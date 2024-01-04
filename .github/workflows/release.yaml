@@ -28,4 +28,3 @@ jobs:
             sisakulint_*_*_*.tar.gz
             sisakulint_*_checksums.txt
           fail_on_unmatched_files: true
-        

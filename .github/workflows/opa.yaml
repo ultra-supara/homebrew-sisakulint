@@ -19,11 +19,20 @@ jobs:
       run: |
         git clone https://github.com/ultra-supara/homebrew-sisakulint.git
         cd homebrew-sisakulint/script
+        echo "-------start---------"
         opa eval --format pretty --data commitsha.rego --input commitsha.yaml "data.core.missing_action_ref_sha_warnings" --explain=full
+        echo "---------------------"
         opa eval --format pretty --data credential.rego --input credential.yaml "data.core.check_credentials" --explain=full
+        echo "---------------------"
         opa eval --format pretty --data imagetag.rego --input imagetag.yaml "data.core.missing_image_tag_warnings" --explain=full
+        echo "---------------------"
         opa eval --format pretty --data jobsecrets.rego --input jobsecrets.yaml "data.core.missing_secrets_warnings" --explain=full
+        echo "---------------------"
         opa eval --format pretty --data permission.rego --input permission.yaml "data.core.missing_permissions_warnings" --explain=full
+        echo "---------------------"
         opa eval --format pretty --data issueinjection.rego --input issueinjection.yaml "data.core.deny" --explain=full
+        echo "---------------------"
         opa eval --format pretty --data pull_req_title.rego --input pull_req_title.yaml "data.core.deny" --explain=full
+        echo "---------------------"
         opa eval --format pretty --data timeout-minutes.rego --input timeout-minutes.yaml "data.core.missing_timeout_warnings" --explain=full
+        echo "-------end-----------"

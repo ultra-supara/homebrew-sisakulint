@@ -4,5 +4,5 @@ package core
 deny[reason] {
     input.jobs[_].steps[_].run
     regex.match(`\$\{\{\s*github\.event\.pull_request\.title\s*\}\}`, input.jobs[_].steps[_].run)
-    reason := "Pull request title is used in the workflow without sanitization."
+    reason := "Warning: Pull request title is used in the workflow without sanitization.[security-hardening]"
 }

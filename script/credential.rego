@@ -19,7 +19,7 @@ check_credentials[violation] {
     not is_expression_assigned(service.credentials.password)
     violation := {
         "type": "credential_violation",
-        "message": sprintf("Password found in service section %q, do not paste password direct hardcode", [service.name]),
+        "message": sprintf("Critical: Password found in service section %q, do not paste password direct hardcode [security-hardening]", [service.name]),
         "position": "service.credentials.password"
     }
 }

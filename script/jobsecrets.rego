@@ -25,10 +25,10 @@ step_secrets_set {
 # エラーメッセージを生成
 missing_secrets_warnings[result] {
     not job_secrets_set
-    result := "Warning: Secrets should be set at the job level in each job's env."
+    result := "Warning: Secrets should be set at the job level in each job's env.[security-hardening]"
 }
 
 missing_secrets_warnings[result] {
     not step_secrets_set
-    result := "Warning: Secrets should be set at the step level in each step's env."
+    result := "Warning: Secrets should be set at the step level in each step's env.[security-hardening]"
 }

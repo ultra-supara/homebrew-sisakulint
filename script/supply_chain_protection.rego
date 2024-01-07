@@ -31,10 +31,10 @@ credential_usage_is_invalid {
 # エラーメッセージを生成
 generate_error_messages[msg] {
     not external_action_is_safe
-    msg := "Error: External actions must be secure. Use a specific version or commit hash."
+    msg := "Warning: External actions must be secure. Use a specific version or commit hash.[security-hardening]"
 }
 
 generate_error_messages[msg] {
     credential_usage_is_invalid
-    msg := "Error: Environment variables containing credentials should only be used in necessary steps."
+    msg := "Warning: Environment variables containing credentials should only be used in necessary steps.[security-hardening]"
 }

@@ -23,5 +23,5 @@ contains_colon(image) {
 # Generate warning messages
 missing_image_tag_warnings[result] {
     image_tag_not_pinned
-    result := "Warning: The image tag in the container is not pinned. Please use a specific tag or hash."
+    result := "Warning: The image tag in the container is not pinned. Please use a specific tag or hash.[security-hardening]"
 }

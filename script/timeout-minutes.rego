@@ -19,7 +19,7 @@ step_timeout_missing[step_name] {
 # Generate warning messages
 missing_timeout_warnings[result] {
     job_timeout_missing
-    result := "Warning: timeout-minutes is not set at the job level."
+    result := "Warning: timeout-minutes is not set at the job level.[security-hardening]"
 }
 
 missing_timeout_warnings[result] {

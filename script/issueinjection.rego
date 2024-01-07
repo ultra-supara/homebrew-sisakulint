@@ -12,5 +12,5 @@ deny[reason] {
     # Suggest using env for setting variables
     not step.env
 
-    reason := sprintf("Direct usage of ${{ ... }} in run script detected at jobs.%v.steps.%v. Use env to set variables.", [i, j])
+    reason := sprintf("Warning: Direct usage of ${{ ... }} in run script detected at jobs.%v.steps.%v. Use env to set variables.[security-hardening]", [i, j])
 }

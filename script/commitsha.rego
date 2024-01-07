@@ -19,5 +19,5 @@ is_full_length_sha(ref) {
 # Generate warning messages
 missing_action_ref_sha_warnings[result] {
     action_ref_not_sha
-    result := "Warning: The action ref in 'uses' should be a full length commit SHA for immutability and security. see documents : https://docs.github.com/ja/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+    result := "Warning: The action ref in 'uses' should be a full length commit SHA for immutability and security. see documents : https://docs.github.com/ja/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions [security-hardening]"
 }

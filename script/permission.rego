@@ -11,5 +11,5 @@ job_permissions_missing {
 # 警告メッセージを生成
 missing_permissions_warnings[result] {
     job_permissions_missing
-    result := "Warning: 'permissions' is not set at the job level."
+    result := "Warning: 'permissions' is not set at the job level.[security-hardening]"
 }

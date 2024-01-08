@@ -1,0 +1,50 @@
+name: policy check for oss repo from GitHub Actions
+on: [push]
+
+jobs:
+  opa-check:
+    name: opa cli
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout sisakulint Repository
+      uses: actions/checkout@v2
+      with:
+        repository: ultra-supara/homebrew-sisakulint
+        path: sisakulint
+
+    - name: Checkout goreleaser Repository
+      uses: actions/checkout@v2
+      with:
+        repository: goreleaser/goreleaser
+        path: goreleaser
+
+    - name: Install OPA
+      run: |
+        curl -L -o opa https://openpolicyagent.org/downloads/latest/opa_linux_amd64
+        chmod +x opa
+        sudo mv opa /usr/local/bin/
+
+    - name: Run OPA Policy Check
+      run: |
+        cd goreleaser/.github/workflows
+        for file in *.yml; do
+          echo "Checking $file..."
+          opa eval --format pretty --data commitsha.rego --input "$file" "data.core.missing_action_ref_sha_warnings" --explain=full
+          echo "---------------------"
+          opa eval --format pretty --data credential.rego --input "$file" "data.core.check_credentials" --explain=full
+          echo "---------------------"
+          opa eval --format pretty --data imagetag.rego --input "$file" "data.core.missing_image_tag_warnings" --explain=full
+          echo "---------------------"
+          opa eval --format pretty --data jobsecrets.rego --input "$file" "data.core.missing_secrets_warnings" --explain=full
+          echo "---------------------"
+          opa eval --format pretty --data permission.rego --input "$file" "data.core.missing_permissions_warnings" --explain=full
+          echo "---------------------"
+          opa eval --format pretty --data issueinjection.rego --input "$file" "data.core.deny" --explain=full
+          echo "---------------------"
+          opa eval --format pretty --data pull_req_title.rego --input "$file" "data.core.deny" --explain=full
+          echo "---------------------"
+          opa eval --format pretty --data supply_chain_protection.rego --input "$file" "data.core.generate_error_messages"
+          echo "---------------------"
+          opa eval --format pretty --data timeout-minutes.rego --input "$file" "data.core.missing_timeout_warnings" --explain=full
+          echo "---------------------"
+        done

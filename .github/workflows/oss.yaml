@@ -18,6 +18,10 @@ jobs:
         repository: goreleaser/goreleaser
         path: goreleaser
 
+    - name: Copy Rego Files
+      run: |
+        cp sisakulint/script/*.rego goreleaser/.github/workflows/
+
     - name: Install OPA
       run: |
         curl -L -o opa https://openpolicyagent.org/downloads/latest/opa_linux_amd64

@@ -34,5 +34,7 @@ jobs:
         echo "---------------------"
         opa eval --format pretty --data pull_req_title.rego --input pull_req_title.yaml "data.core.deny" --explain=full
         echo "---------------------"
+        opa eval --format pretty --data supply_chain_protection.rego --input supply_chain_protection.yaml "data.core.generate_error_messages"
+        echo "---------------------"
         opa eval --format pretty --data timeout-minutes.rego --input timeout-minutes.yaml "data.core.missing_timeout_warnings" --explain=full
         echo "-------end-----------"

@@ -1,8 +1,9 @@
 # sisakulint
-sisakulint is a private repository tool, but it can be installed from brew.
+Before moving on, please consider giving us a GitHub star ⭐️. Thank you!
+
 ![logo](https://github.com/ultra-supara/homebrew-sisakulint/assets/67861004/e9801cbb-fbe1-4822-a5cd-d1daac33e90f)
 
-## JSON schema for normal system confirmation for GitHub Actions syntax
+## JSON schema for GitHub Actions syntax
 paste yours `settings.json`
 ```
  "yaml.schemas": {

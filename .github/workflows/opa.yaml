@@ -1,4 +1,4 @@
-name: opa policy check
+name: policy check for oss repo from GitHub Actions
 on: [push]
 
 jobs:
@@ -6,8 +6,21 @@ jobs:
     name: opa cli
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Repository
+    - name: Checkout sisakulint Repository
       uses: actions/checkout@v2
+      with:
+        repository: ultra-supara/homebrew-sisakulint
+        path: sisakulint
+
+    - name: Checkout goreleaser Repository
+      uses: actions/checkout@v2
+      with:
+        repository: goreleaser/goreleaser
+        path: goreleaser
+
+    - name: Copy Rego Files
+      run: |
+        cp sisakulint/script/*.rego goreleaser/.github/workflows/
 
     - name: Instfull OPA
       run: |

@@ -13,8 +13,10 @@ jobs:
         brew tap ultra-supara/homebrew-sisakulint
         brew install sisakulint
 
-    - name: Run sisakulint
+    - name: Clone goreleaser repository
+      run: git clone https://github.com/goreleaser/goreleaser.git
+
+    - name: Run sisakulint on goreleaser
       run: |
-        sisakulint -h
-        git clone https://github.com/goreleaser/goreleaser.git
+        cd goreleaser
         sisakulint -debug

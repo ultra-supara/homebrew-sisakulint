@@ -21,6 +21,7 @@ jobs:
     - name: Copy Rego Files
       run: |
         cp sisakulint/script/*.rego goreleaser/.github/workflows/
+        ls -la goreleaser/.github/workflows/
 
     - name: Install OPA
       run: |

@@ -1,4 +1,4 @@
-name: policy check for oss repo from GitHub Actions
+name: policy check for brgen from GitHub Actions
 on: [push]
 
 jobs:
@@ -12,16 +12,16 @@ jobs:
         repository: ultra-supara/homebrew-sisakulint
         path: sisakulint
 
-    - name: Checkout goreleaser Repository
+    - name: Checkout brgen Repository
       uses: actions/checkout@v2
       with:
-        repository: goreleaser/goreleaser
-        path: goreleaser
+        repository: on-keyday/brgen
+        path: brgen
 
     - name: Copy Rego Files
       run: |
-        cp sisakulint/script/*.rego goreleaser/.github/workflows/
-        ls -la goreleaser/.github/workflows/
+        cp sisakulint/script/*.rego brgen/.github/workflows/
+        ls -la brgen/.github/workflows/
 
     - name: Install OPA
       run: |

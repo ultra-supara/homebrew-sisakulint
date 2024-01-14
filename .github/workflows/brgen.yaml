@@ -31,7 +31,7 @@ jobs:
 
     - name: Run OPA Policy Check
       run: |
-        cd goreleaser/.github/workflows
+        cd brgen/.github/workflows
         for file in *.yml; do
           echo "Checking $file..."
           opa eval --format pretty --data commitsha.rego --input "$file" "data.core.missing_action_ref_sha_warnings" --explain=full

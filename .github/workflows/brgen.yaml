@@ -34,22 +34,22 @@ jobs:
         cd brgen/.github/workflows
         for file in *.yml; do
           echo "Checking $file..."
-          opa eval --format pretty --data commitsha.rego --input "$file" "data.core.missing_action_ref_sha_warnings" --explain=full
+          opa eval --format pretty --data commitsha.rego --input "$file" "data.core.missing_action_ref_sha_warnings" --explain=debug
           echo "---------------------"
-          opa eval --format pretty --data credential.rego --input "$file" "data.core.check_credentials" --explain=full
+          opa eval --format pretty --data credential.rego --input "$file" "data.core.check_credentials" --explain=debug
           echo "---------------------"
-          opa eval --format pretty --data imagetag.rego --input "$file" "data.core.missing_image_tag_warnings" --explain=full
+          opa eval --format pretty --data imagetag.rego --input "$file" "data.core.missing_image_tag_warnings" --explain=debug
           echo "---------------------"
-          opa eval --format pretty --data jobsecrets.rego --input "$file" "data.core.missing_secrets_warnings" --explain=full
+          opa eval --format pretty --data jobsecrets.rego --input "$file" "data.core.missing_secrets_warnings" --explain=debug
           echo "---------------------"
-          opa eval --format pretty --data permission.rego --input "$file" "data.core.missing_permissions_warnings" --explain=full
+          opa eval --format pretty --data permission.rego --input "$file" "data.core.missing_permissions_warnings" --explain=debug
           echo "---------------------"
-          opa eval --format pretty --data issueinjection.rego --input "$file" "data.core.deny" --explain=full
+          opa eval --format pretty --data issueinjection.rego --input "$file" "data.core.deny" --explain=debug
           echo "---------------------"
-          opa eval --format pretty --data pull_req_title.rego --input "$file" "data.core.deny" --explain=full
+          opa eval --format pretty --data pull_req_title.rego --input "$file" "data.core.deny" --explain=debug
           echo "---------------------"
-          opa eval --format pretty --data supply_chain_protection.rego --input "$file" "data.core.generate_error_messages"
+          opa eval --format pretty --data supply_chain_protection.rego --input "$file" "data.core.generate_error_messages" --explain=debug
           echo "---------------------"
-          opa eval --format pretty --data timeout-minutes.rego --input "$file" "data.core.missing_timeout_warnings" --explain=full
+          opa eval --format pretty --data timeout-minutes.rego --input "$file" "data.core.missing_timeout_warnings" --explain=debug
           echo "---------------------"
         done

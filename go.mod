@@ -3,6 +3,7 @@ module github.com/ultra-supara/homebrew-sisakulint
 go 1.21.5
 
 require (
+	github.com/fatih/color v1.16.0
 	github.com/open-policy-agent/opa v0.60.0
 	gopkg.in/yaml.v3 v3.0.1
 )
@@ -19,6 +20,8 @@ require (
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/uuid v1.5.0 // indirect
 	github.com/gorilla/mux v1.8.1 // indirect
+	github.com/mattn/go-colorable v0.1.13 // indirect
+	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
 	github.com/prometheus/client_golang v1.16.0 // indirect
 	github.com/prometheus/client_model v0.3.0 // indirect

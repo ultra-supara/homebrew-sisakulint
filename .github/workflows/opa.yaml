@@ -23,21 +23,23 @@ jobs:
         git clone https://github.com/ultra-supara/homebrew-sisakulint.git
         cd homebrew-sisakulint/script
         echo "-------start---------"
-        opa eval --format pretty --data commitsha.rego --input commitsha.yaml "data.core.missing_action_ref_sha_warnings" --explain=debug
+        opa eval --format pretty --data commitsha.rego --input commitsha.yaml "data.core.missing_action_ref_sha_warnings" --explain=full
         echo "---------------------"
-        opa eval --format pretty --data credential.rego --input credential.yaml "data.core.check_credentials" --explain=debug
+        opa eval --format pretty --data credential.rego --input credential.yaml "data.core.check_credentials" --explain=full
         echo "---------------------"
-        opa eval --format pretty --data imagetag.rego --input imagetag.yaml "data.core.missing_image_tag_warnings" --explain=debug
+        opa eval --format pretty --data imagetag.rego --input imagetag.yaml "data.core.missing_image_tag_warnings" --explain=full
         echo "---------------------"
-        opa eval --format pretty --data jobsecrets.rego --input jobsecrets.yaml "data.core.missing_secrets_warnings" --explain=debug
+        opa eval --format pretty --data jobsecrets.rego --input jobsecrets.yaml "data.core.missing_secrets_warnings" --explain=full
         echo "---------------------"
-        opa eval --format pretty --data permission.rego --input permission.yaml "data.core.missing_permissions_warnings" --explain=debug
+        opa eval --format pretty --data permission.rego --input permission.yaml "data.core.missing_permissions_warnings" --explain=full
         echo "---------------------"
-        opa eval --format pretty --data issueinjection.rego --input issueinjection.yaml "data.core.deny" --explain=debug
+        opa eval --format pretty --data issueinjection.rego --input issueinjection.yaml "data.core.deny" --explain=full
         echo "---------------------"
-        opa eval --format pretty --data pull_req_title.rego --input pull_req_title.yaml "data.core.deny" --explain=debug
+        opa eval --format pretty --data pull_req_title.rego --input pull_req_title.yaml "data.core.deny" --explain=full
         echo "---------------------"
-        opa eval --format pretty --data supply_chain_protection.rego --input supply_chain_protection.yaml "data.core.generate_error_messages" --explain=debug
+        opa eval --format pretty --data supply_chain_protection.rego --input supply_chain_protection.yaml "data.core.generate_error_messages" --explain=full
         echo "---------------------"
-        opa eval --format pretty --data timeout-minutes.rego --input timeout-minutes.yaml "data.core.missing_timeout_warnings" --explain=debug
-        echo "-------end-----------"
+        opa eval --format pretty --data timeout-minutes.rego --input timeout-minutes.yaml "data.core.missing_timeout_warnings" --explain=full
+        echo "---------------------"
+        opa eval --format pretty --data untrusted_image.rego --input untrusted_image.yaml "data.core.deny" --explain=full
+        echo "--------end----------"

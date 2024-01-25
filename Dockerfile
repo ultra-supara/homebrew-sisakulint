@@ -1,10 +1,26 @@
-FROM ubuntu:latest
+FROM python:3.12-alpine
 
-SHELL ["/bin/bash", "-c"]
-RUN apt-get update && apt-get install -y curl git vim
-RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-RUN echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >> ~/.bashrc
-RUN source ~/.bashrc
-RUN /home/linuxbrew/.linuxbrew/bin/brew tap ultra-supara/homebrew-sisakulint
+RUN pip3 install --upgrade pip && \
+  pip3 install pyflakes && \
+  rm -r /root/.cache
 
-CMD ["/bin/bash"]
+RUN apk --update add git curl && \
+  rm -rf /var/lib/apt/lists/* && \
+  rm /var/cache/apk/*
+
+# install reviewdog
+ENV REVIEWDOG_VERSION=v0.17.0
+RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b /usr/local/bin/ ${REVIEWDOG_VERSION}
+
+# install sisakulint
+ENV SISAKULINT_VERSION=0.0.0
+ENV OSTYPE=linux-gnu
+
+# sisakulintのダウンロードと解凍
+RUN wget https://github.com/ultra-supara/homebrew-sisakulint/releases/download/v${SISAKULINT_VERSION}/sisakulint_${SISAKULINT_VERSION}_linux_amd64.tar.gz -O sisakulint.tar.gz
+RUN tar -xzf sisakulint.tar.gz -C /usr/local/bin
+
+# 作業ディレクトリの設定（必要に応じて）
+WORKDIR /usr/local/bin
+
+ENTRYPOINT ["/entrypoint.sh"]

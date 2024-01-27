@@ -52,4 +52,5 @@ jobs:
           echo "---------------------"
           opa eval --format pretty --data timeout-minutes.rego --input "$file" "data.core.missing_timeout_warnings" --explain=debug
           echo "---------------------"
-        done
+          opa eval --format pretty --data untrusted_image.rego --input untrusted_image.yaml "data.core.deny" --explain=full
+          done

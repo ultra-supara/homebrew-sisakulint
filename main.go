@@ -13,7 +13,7 @@ func main() {
 		Short: "Policy checker is a CLI tool for checking policies",
 		Long:  `Policy checker is a CLI tool for checking policies based on Open Policy Agent`,
 		Run: func(cmd *cobra.Command, args []string) {
-			if err := policy(); err != nil {
+			if err := Policy(); err != nil {
 				fmt.Println(err)
 				os.Exit(1)
 			}

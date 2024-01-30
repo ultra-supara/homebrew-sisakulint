@@ -63,7 +63,7 @@ func ProcessResults(results rego.ResultSet, seenMessages map[string]bool) error 
 				if _, seen := seenMessages[msgStr]; !seen {
 					// Regoクエリからのメッセージを整形して出力
 					return &PolicyError{
-						File:    "unknown",
+						File:    ".github/workflows",
 						Line:    0,
 						Column:  0,
 						Message: msgStr,
@@ -75,7 +75,7 @@ func ProcessResults(results rego.ResultSet, seenMessages map[string]bool) error 
 	return nil
 }
 
-func policy() error {
+func Policy() error {
 	// ワークフローファイルを読み込み
 	files, err := LoadYAMLFiles(".github/workflows")
 	if err != nil {
@@ -83,7 +83,7 @@ func policy() error {
 	}
 
 	// Regoポリシーファイルを読み込み
-	policy, err := os.ReadFile("issueinjection.rego")
+	policy, err := os.ReadFile("script/issueinjection.rego")
 	if err != nil {
 		return err
 	}

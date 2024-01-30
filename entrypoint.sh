@@ -11,7 +11,7 @@ fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-sisakulint ${INPUT_ACTIONLINT_FLAGS} \
+sisakulint -debug ${INPUT_SISAKULINT_FLAGS} \
     | reviewdog \
         -efm="%f:%l:%c: %m" \
         -name="${INPUT_TOOL_NAME}" \

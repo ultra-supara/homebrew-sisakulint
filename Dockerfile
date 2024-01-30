@@ -1,7 +1,6 @@
 FROM python:3.12-alpine
 
 RUN pip3 install --upgrade pip && \
-  pip3 install pyflakes && \
   rm -r /root/.cache
 
 RUN apk --update add git curl && \
@@ -19,6 +18,10 @@ ENV OSTYPE=linux-gnu
 # sisakulintのダウンロードと解凍
 RUN wget https://github.com/ultra-supara/homebrew-sisakulint/releases/download/v${SISAKULINT_VERSION}/sisakulint_${SISAKULINT_VERSION}_linux_amd64.tar.gz -O sisakulint.tar.gz
 RUN tar -xzf sisakulint.tar.gz -C /usr/local/bin
+
+# Copy entrypoint script and set permission
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 # 作業ディレクトリの設定（必要に応じて）
 WORKDIR /usr/local/bin

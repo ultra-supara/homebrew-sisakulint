@@ -20,8 +20,10 @@ func main() {
 		},
 	}
 
-	if err := rootCmd.Execute(); err != nil {
-		fmt.Println(err.Error()) // PolicyErrorのErrorメソッドを使用
+		if err := rootCmd.Execute(); err != nil {
+		if policyErr, ok := err.(*PolicyError); ok {
+    		policyErr.DisplayError(os.Stdout, nil) // 第二引数には、エラーのコンテキストとなるソースコードの内容をバイト配列で渡すか、またはnilを渡します。
+		}
 		os.Exit(1)
 	}
 }

@@ -63,10 +63,11 @@ func ProcessResults(results rego.ResultSet, seenMessages map[string]bool) error 
 				if _, seen := seenMessages[msgStr]; !seen {
 					// Regoクエリからのメッセージを整形して出力
 					return &PolicyError{
-						File:    ".github/workflows",
-						Line:    0,
-						Column:  0,
-						Message: msgStr,
+    					FilePath: ".github/workflows",
+    					Line:     0,
+    					Column:   0,
+    					Description: msgStr,
+    					Type:     "security-hardening",
 					}
 				}
 			}

@@ -1,5 +1,9 @@
 name: Run sisakulint from GitHub Actions
-on: [push]
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: "30 5 * * 1"
+
 
 jobs:
   sisakulint-job:

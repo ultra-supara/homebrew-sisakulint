@@ -1,0 +1,14 @@
+name: Docker Image CI for sisakulint
+
+on: [push]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag "reviewdog-sisakulint:$(date +%s)"

@@ -1,7 +1,7 @@
 # sisakulint
 Before moving on, please consider giving us a GitHub star ⭐️. Thank you!
 
-<img src="(https://github.com/ultra-supara/homebrew-sisakulint/assets/67861004/e9801cbb-fbe1-4822-a5cd-d1daac33e90f" alt="sisakulint logo" width="160" height="160"/> 
+<img src="https://github.com/ultra-supara/homebrew-sisakulint/assets/67861004/e9801cbb-fbe1-4822-a5cd-d1daac33e90f" alt="sisakulint logo" width="160" height="160"/> 
 
 ## install macOS user
 

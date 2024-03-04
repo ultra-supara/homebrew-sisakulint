@@ -18,21 +18,6 @@ $ cd < sisakulintがあるところ >
 $ mv ./sisakulint /usr/local/bin/sisakulint
 ```
 
-## Run sisakulint on linux brew using docker
-I am so sorry, this method is currently unavailable.
-Run the following commands:
-
-```bash
-# Usage
-$ git clone https://github.com/ultra-supara/homebrew-sisakulint.git
-$ cd homebrew-sisakulint
-$ docker compose up -d --build
-$ docker attach <createされたcontainer nameに各自で変更してください>
-# ここで rootに入ると思います。
-$ ls -la
-$ brew install sisakulint
-```
-
 ## Usage test
 Create a file called test.yaml in the `.github/workflows` directory or go to your repository where your workflows file is located.
 ```yaml

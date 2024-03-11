@@ -22,7 +22,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: |
             sisakulint_*_*_*.tar.gz

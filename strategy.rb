@@ -122,6 +122,7 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
 
   def fetch_release_metadata
     release_url = "https://api.github.com/repos/#{@owner}/#{@repo}/releases/tags/#{@tag}"
+    puts release_url
     res = curl_output release_url
     puts res.stdout
     JSON.parse(res.stdout)

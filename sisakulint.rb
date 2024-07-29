@@ -10,7 +10,7 @@ class Sisakulint < Formula
   on_macos do
     on_intel do
       url "https://github.com/ultra-supara/sisakulint/releases/download/v0.0.6/sisakulint_0.0.6_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "b90afa7742296d2c4c31b69a83c87eeb91df0492cdadb6b2c1d357eeff7c0019"
+      sha256 "34c19dd450b16433f9292f873571557c34f6f88d2f900b6760f9cf8243e66d69"
 
       def install
         bin.install "sisakulint"
@@ -18,7 +18,7 @@ class Sisakulint < Formula
     end
     on_arm do
       url "https://github.com/ultra-supara/sisakulint/releases/download/v0.0.6/sisakulint_0.0.6_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "f3d2a1f42c5ccba13282909b91765a9cf355237055fc833f680d33a644c41078"
+      sha256 "ecedf60f96addfb7ba2dd92ac42ebd177926c38182127e862f4321aff2664c78"
 
       def install
         bin.install "sisakulint"
@@ -30,7 +30,7 @@ class Sisakulint < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/ultra-supara/sisakulint/releases/download/v0.0.6/sisakulint_0.0.6_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-        sha256 "3584f02231a3e66f5e5f003beff5d72c311f06bdaea40ff5d1a919ded9e474c6"
+        sha256 "a1f15dd9a2b323d0e894cb25e1803b111bb0535342977a09ad1cfbbea16831f6"
 
         def install
           bin.install "sisakulint"
@@ -40,7 +40,7 @@ class Sisakulint < Formula
     on_arm do
       if !Hardware::CPU.is_64_bit?
         url "https://github.com/ultra-supara/sisakulint/releases/download/v0.0.6/sisakulint_0.0.6_linux_armv6.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-        sha256 "aabc256d04a682b71808a9f814397b32678f30b72f7d37d09f9d5b5da8b26ea6"
+        sha256 "07b06e9587d5899a9fd4473c25e5b8dab00c17754b99d50c51af2253d5dd866f"
 
         def install
           bin.install "sisakulint"
@@ -50,7 +50,7 @@ class Sisakulint < Formula
     on_arm do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/ultra-supara/sisakulint/releases/download/v0.0.6/sisakulint_0.0.6_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-        sha256 "b069a7da402d19b99db6ac0aaecdcce7fa0fd6cbc55397711b6ae7f6ddff4f31"
+        sha256 "6ccd68cd175d6120e40fa1731dac5e7450094a48882ba9fa1e76c0c052bd7dca"
 
         def install
           bin.install "sisakulint"

@@ -5,7 +5,7 @@ require_relative "strategy" # typed: false
 class Sisakulint < Formula
   desc "Support tools for GitHub Actions workflow files"
   homepage "https://github.com/ultra-supara/sisakulint"
-  version "0.0.7"
+  version "0.0.9"
 
   on_macos do
     on_intel do

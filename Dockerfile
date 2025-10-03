@@ -1,4 +1,4 @@
-FROM python:3.12-alpine
+FROM python:3.17-alpine
 
 RUN pip3 install --upgrade pip && \
   rm -r /root/.cache
@@ -12,11 +12,11 @@ ENV REVIEWDOG_VERSION=v0.17.0
 RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b /usr/local/bin/ ${REVIEWDOG_VERSION}
 
 # install sisakulint
-ENV SISAKULINT_VERSION=0.0.0
+ENV SISAKULINT_VERSION=0.1.2
 ENV OSTYPE=linux-gnu
 
 # sisakulintのダウンロードと解凍
-RUN wget https://github.com/ultra-supara/homebrew-sisakulint/releases/download/v${SISAKULINT_VERSION}/sisakulint_${SISAKULINT_VERSION}_linux_amd64.tar.gz -O sisakulint.tar.gz
+RUN wget https://github.com/ultra-supara/sisakulint/releases/download/v${SISAKULINT_VERSION}/sisakulint_${SISAKULINT_VERSION}_linux_amd64.tar.gz -O sisakulint.tar.gz
 RUN tar -xzf sisakulint.tar.gz -C /usr/local/bin
 
 # Copy entrypoint script and set permission

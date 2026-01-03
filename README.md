@@ -1,1 +1,1 @@
-# See https://github.com/ultra-supara/sisakulint , https://sisakulint.github.io
+# See https://github.com/sisaku-security/sisakulint , https://sisakulint.github.io
